@@ -1,1 +1,33 @@
 7. Faça um programa para inserir N letras informadas pelo usuário em um arquivo texto. Onde N é uma quantidade de letras definida pelo usuário. Depois de inseridas as N letras, o programa deverá ler todas as N letras do arquivo, calcular e mostrar a quantidade de vogais, ou seja, quantas letras a, e, i, o, u.
+
+using System;
+using System.IO;
+
+class Program{
+    static void Main(string[]args){
+        string letras;
+        int vogais=0;
+        Console.WriteLine("---Programa que le a quantidade de vogais---");
+        Console.WriteLine("Digite varias letras:");
+        letras=Console.ReadLine();
+        for(int i=0;i<letras.Length;i++){
+            if(letras[i]=='a'){
+                vogais++;
+            }
+            else if(letras[i]=='e'){
+                vogais++;
+            }
+            else if(letras[i]=='i'){
+                vogais++;
+            }
+            else if (letras[i]=='o'){
+                vogais++;
+            }
+            else if (letras[i]=='u'){
+                vogais++;
+            }
+        }Console.WriteLine("Quantidade de vogais: "+vogais);
+        Console.ReadKey();
+
+    }   
+}
