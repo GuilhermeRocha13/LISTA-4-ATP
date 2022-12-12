@@ -9,7 +9,7 @@ using System.IO;
 
 class Program{
     static void Main(string[]args){
-       string texto= @"C:\Users\gle11\Desktop\Resultado.txt.";
+       string texto= @"C:\Users\guilh\OneDrive\Área de Trabalho\lista 4\MeuTexto";
        int qtd_veiculos, valor_aluguel;
        Console.WriteLine("Digite a quantidade de veiculos que podem ser alugados:");
        qtd_veiculos=int.Parse(Console.ReadLine());
