@@ -1,1 +1,45 @@
 9. Crie um programa que receba dados de vários alunos (Matricula e Telefone) e armazene em um arquivo texto. Crie no mesmo programa uma opção de ler dados de um arquivo já armazenado dados de alunos.
+
+using System;
+using System.IO;
+
+class Program{
+    static void Main(string[]args){
+                double n, matricula, telefone;
+                string texto= @"C:\Users\gle11\Desktop\Alunos.txt.";
+                Console.WriteLine("Digite o numero de alunos:");
+                n=int.Parse(Console.ReadLine());
+                
+                using(StreamWriter sw= new StreamWriter(texto)){
+                    sw.WriteLine("-----------Relatorio escolar--------------");
+                    for(int i=1;i<=n;i++){
+                        Console.WriteLine("Digite o numero da matricula do "+i+"°"+" aluno: ");
+                        matricula=double.Parse(Console.ReadLine());
+                        sw.WriteLine("Numero da matricula do "+i+"°"+"aluno");
+                        sw.WriteLine(matricula);
+                        sw.WriteLine(" ");
+                        Console.WriteLine("Digite o telefone do "+i+"°"+" aluno: ");
+                        telefone=double.Parse(Console.ReadLine());
+                        sw.WriteLine("Numero de telefone do "+i+"°"+"aluno");
+                        sw.WriteLine(telefone);
+                        sw.WriteLine(" ");
+                    }
+                }
+                Console.WriteLine("Deseja ler os dados do arquivo? Se sim 's' se não 'n'.");
+                char opção=char.Parse(Console.ReadLine());
+                switch(opção){
+                    case 's':
+                    using(StreamReader sr= new StreamReader(texto)){
+                using(sr){
+                    while(!sr.EndOfStream){
+                        string arquivo= sr.ReadLine();
+                        Console.WriteLine(arquivo);
+                    }
+                }
+            }        break;
+                    case 'n':
+                    Console.WriteLine("Obrigado pela colaboração!!!");
+                    break;
+                }
+    }
+}
