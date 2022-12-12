@@ -1,0 +1,31 @@
+4. Implemente um programa que abra o arquivo texto e conte a quantidade de caracteres ‘a’ que estão presentes nele. Imprima a quantidade na tela.
+
+using System;
+using System.IO;
+using System.Text;
+class Program{
+
+static void Main(string[] args){
+
+        int qta=0;
+//gera o arquivo 
+        string texto = @"C:\Users\guilh\OneDrive\Área de Trabalho\lista 4\MeuTexto.txt";
+        using(StreamWriter sw = new StreamWriter(texto)){
+            sw.Write("eu te amo maria eduarda volte para mim");
+        }
+// confere se existe letra "a" no arquivo
+        using (StreamReader sr= new StreamReader(texto)){
+            string dados =sr.ReadLine();
+            
+            for(int i=0; i<dados.Length; i++){
+//caso exista adiciona 1 unidade.
+                if(dados[i]=='a'||dados[i]=='A'){
+                    qta++;
+                }
+            }
+
+        }
+            Console.WriteLine("Quantidade de a: " + qta);
+            
+    }
+}
