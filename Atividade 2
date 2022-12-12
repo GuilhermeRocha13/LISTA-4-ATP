@@ -1,0 +1,23 @@
+2. Faça um programa que receba do usuário uma frase e imprima a frase sem as vogais.
+	
+using System;
+
+class Program{
+
+static void Main(string[] args){
+
+Console.WriteLine("Escreva uma frase");
+string frase = Console.ReadLine();
+
+string frase2 = ""; //variavel q vai armazenar a frase sem vogal 
+
+for(int i = 0; i < frase.Length; i++){ //for que vai percorrer a frase
+
+    if(frase[i] != 'a' && frase[i] != 'e' && frase[i] != 'i' && frase[i] != 'o' && frase[i] != 'u'){ //condição para armazenar o valor na variavel sem vogal
+
+        frase2 += frase[i];
+    }
+}
+Console.WriteLine("Frase sem vogal: " + frase2);
+    } 
+}
