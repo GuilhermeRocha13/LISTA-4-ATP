@@ -3,3 +3,42 @@
 - Quando o cliente atrasa a entrega, é cobrada uma multa de 20% sobre o valor do aluguel. Sabendo que um décimo dos veículos alugados no mês é devolvido com atraso, calcule o valor ganho com multas no mês
 - Sabe-se ainda que 2% dos veículos precisam de manutenção ao longo do ano. Calcule o valor gasto com a manutenção anual, sabendo que o valor gasto em média com a manutenção é de R$ 600,00.
 Além de mostrar os resultados na tela, grave em um arquivo chamado resultado.txt. Cada valor deverá ser armazenado em uma linha.
+
+using System;
+using System.IO;
+
+class Program{
+    static void Main(string[]args){
+       string texto= @"C:\Users\gle11\Desktop\Resultado.txt.";
+       int qtd_veiculos, valor_aluguel;
+       Console.WriteLine("Digite a quantidade de veiculos que podem ser alugados:");
+       qtd_veiculos=int.Parse(Console.ReadLine());
+       Console.WriteLine("Digite o valor do aluguel:");
+       valor_aluguel=int.Parse(Console.ReadLine());
+
+       double alugados_por_mes= qtd_veiculos/3; 
+       double valor_aluguel_mensal= alugados_por_mes * valor_aluguel;
+       double faturamento_anual= valor_aluguel_mensal*12;
+       double valor_multas_mensal= ((alugados_por_mes* 0.2)*valor_aluguel)/10;
+       double valor_gasto_manutenção=((0.02*qtd_veiculos)*600)*12;
+        
+        Console.WriteLine("RELATORIO");
+        Console.WriteLine("__________________________________________");
+        Console.WriteLine($"Valor de faturamento anual dos carros alugados: R${faturamento_anual:F2}");
+        Console.WriteLine("__________________________________________");
+        Console.WriteLine($"Valor de faturamento mensal das multas: R${valor_multas_mensal:F2}");
+        Console.WriteLine("__________________________________________");
+        Console.WriteLine($"Valor gasto com manutenção anual: R${valor_gasto_manutenção:F2}");
+        Console.WriteLine("__________________________________________");
+    
+        using(StreamWriter sw=new StreamWriter(texto)){
+            sw.WriteLine("Relatorio de faturamento da empresa");
+            sw.WriteLine("_________________________________________________");
+            sw.WriteLine("Faturamento anual da empresa:"+ faturamento_anual);
+            sw.WriteLine("_________________________________________________");
+            sw.WriteLine("Valor faturado de multas mensal:"+valor_multas_mensal);
+            sw.WriteLine("_________________________________________________");
+            sw.WriteLine("Valor anual gasto com manutenções:"+ valor_gasto_manutenção);
+        }
+    }
+}
