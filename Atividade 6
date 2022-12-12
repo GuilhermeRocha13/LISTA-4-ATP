@@ -1,0 +1,29 @@
+6. Faça um programa que solicite ao usuário um número, em seguida, imprima na tela todos os seus divisores. Salve em um arquivo texto a soma total desses divisores.
+
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string texto = @"C:\Users\guilh\OneDrive\Área de Trabalho\lista 4\MeuTexto";
+        int numero, soma_divisores = 0;
+
+        Console.WriteLine("Digite um numero:");
+        numero = int.Parse(Console.ReadLine()); //entrada de dados
+
+        using (StreamWriter sw = new StreamWriter(texto))
+        {
+            for (int i = 1; i < 100; i++) //for para verificar numero por numero
+            {
+                if (i % numero == 0) //condição para o numero divisivel 
+                {
+                    soma_divisores += i; //somando divisores
+                    Console.WriteLine(i);
+                }
+            }
+            sw.WriteLine(soma_divisores);
+        }
+    }
+}
