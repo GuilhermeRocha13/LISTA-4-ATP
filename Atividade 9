@@ -6,7 +6,7 @@ using System.IO;
 class Program{
     static void Main(string[]args){
                 double n, matricula, telefone;
-                string texto= @"C:\Users\gle11\Desktop\Alunos.txt.";
+                string texto= @"C:\Users\guilh\OneDrive\Área de Trabalho\lista 4\MeuTexto";
                 Console.WriteLine("Digite o numero de alunos:");
                 n=int.Parse(Console.ReadLine());
                 
