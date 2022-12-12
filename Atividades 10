@@ -8,7 +8,7 @@ class Program
     static void Main(string[] args)
     {
         double n, numeros, maior_num = 0, menor_num = 0, media_num = 0, aux=0;
-        string texto = @"C:\Users\gle11\Desktop\numeros.txt.";
+        string texto = @"C:\Users\guilh\OneDrive\Área de Trabalho\lista 4\MeuTexto";
         using (StreamWriter sw = new StreamWriter(texto))
         {
             for (int i = 0; i < 1; i++)
