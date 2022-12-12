@@ -1,0 +1,1 @@
+7. Faça um programa para inserir N letras informadas pelo usuário em um arquivo texto. Onde N é uma quantidade de letras definida pelo usuário. Depois de inseridas as N letras, o programa deverá ler todas as N letras do arquivo, calcular e mostrar a quantidade de vogais, ou seja, quantas letras a, e, i, o, u.
